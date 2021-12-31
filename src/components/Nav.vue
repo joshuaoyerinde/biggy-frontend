@@ -8,15 +8,11 @@
               <router-link to="/" class="nav-link nav-link1 active brand">Biggy</router-link>
             </li>
           </ul>
-            <li class="nav-item">
-              <a class="nav-link active d-icons" href="darshboard.php"><i class="fa fa-home"></i></a>
-            </li>
-            <li class="nav-item mr-4">
-              <a class="nav-link d-icons" href="#"><i class="fa fa-instagram"></i></a>
-            </li>
             <li class="nav-item  mr-2">
               <!-- </div> -->
-             <div><router-link to="/register" class="btn nav-link btn-secondary">Sign up</router-link> </div>
+              <div >
+                <router-link to="/register/biggy9ija" class="btn nav-link btn-secondary">Register here</router-link> 
+              </div>
             </li>
           </ul>
       </div>
@@ -25,11 +21,12 @@
 </template>
 
 <script>
+// import * as Cookie from 'cookies-js'
 export default {
   data:()=>({
-
-
-  })
+   
+  }),
+  
 }
 </script>
 

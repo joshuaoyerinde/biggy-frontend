@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Profile from '../views/Profile.vue'
+import Admin from '../components/Admin.vue'
 const routes = [
   {
     path: '/',
@@ -8,11 +9,19 @@ const routes = [
     component: Home
   },
   {
-    path: '/register',
+    path: '/register/:id',
     name: 'Register',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue')
   },
-  {path:'/profile', name:'Profile', component:Profile}
+  {
+    path:'/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
+  {path:'/profile', name:'Profile', component:Profile},
+
+  // admin page 
+  {path:'/admin', name:'Admin', component:Admin}
 ]
 
 const router = createRouter({
