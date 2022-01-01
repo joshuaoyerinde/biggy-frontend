@@ -63,7 +63,7 @@ export default {
     name:"Profile",
     data:()=>({
         response:'',
-        url:"https://biggytest.netlify.app/#/register",
+        url:"https://biggytest.netlify.app/#/register/",
         details:''
     }),
     // components:{
