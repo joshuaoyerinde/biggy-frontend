@@ -19,6 +19,10 @@ const routes = [
     component: () => import('../views/Login.vue')
   },
   {path:'/profile', name:'Profile', component:Profile},
+  {
+    path:'/timeup', 
+    component:() => import('../views/Endtime.vue')
+  },
 
   // admin page 
   {path:'/admin', name:'Admin', component:Admin}

@@ -36,6 +36,7 @@
                <div class="col-md-6 mt-5 p-3">
                    <div>
                        here is your percentage, we're goin to 50%
+                      <p>Your Count: <b>{{response.count}}%</b> </p>  
                        <div class="progress mb-3">
                         <div class="progress-bar text-center percent" :style="{width:`${response.count}px`}">{{response.count}}%</div>
                        </div>
@@ -62,7 +63,7 @@ export default {
     name:"Profile",
     data:()=>({
         response:'',
-        url:"http://localhost:8080/#/register/",
+        url:"https://biggytest.netlify.app/#/register",
         details:''
     }),
     // components:{
@@ -80,7 +81,7 @@ export default {
         let token = Cookies.get("access_token")
         let tk_data = JSON.parse(atob(token.split('.')[1]))
         this.response = tk_data.token
-        console.log(this.response);
+        // console.log(this.response);
     },
     // mounted(){
     //     // get the deatails after login

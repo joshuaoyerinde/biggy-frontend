@@ -32,7 +32,7 @@
                         List of the Top ten(10) winner
                     </div>
                     <div class="row shadow mt-3">
-                        <table class="table p-2 table-collapse " v-if="show1">
+                        <table class="table p-2 table-collapse " v-if ="show1">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -50,8 +50,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div v-if="show2">
-
+                        <div v-if="show2" style="text-align: center" class="col-md-12">
+                            No record
                         </div>
                     </div>
                 </div>
@@ -65,23 +65,34 @@ import axios from 'axios'
 export default {
     data:()=>({
         details : "",
-        show1: true,
-        show2: false
+        show1: false,
+        show2: true
     }),
     mounted(){
-        let URL = "http://localhost:5000/api/info";
+        let URL = "https://biggyapp.herokuapp.com/api/info";
         axios.get(URL).then(resp => {
             let winner = resp.data.response
             if(resp.status == 200){
                 this.details = winner
+                this.show1 = true
+                this.show2 = false
                 console.log(this.details.length);
                 // console.log("whala ooooo")
-            }else if(this.details.length == 0){
+            }else{
                  this.show1 = false
                 this.show2 = true
             }
         })
-    }
+    },
+    // methods:{
+    //     timeUp(){
+    //         let currentDateObj = new Date();
+
+    //         let minute = currentDateObj.getTime();
+    //         let adminute = minute + 60 * 6000
+    //         localStorage.setItem('timeset', JSON.stringify( adminute))
+    //     }
+    // }
 }
 </script>
 <style scoped>

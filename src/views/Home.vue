@@ -5,6 +5,8 @@
         <div class="biggy-title">
             <h4 class="biggy-inner  animate__animated animate__bounceInDown animate__slower">Welcome To the Biggy Price Of the Year</h4>
             <p class="biggy-small-inner animate__animated animate__bounceInUp animate__slower">Let enjoy the price</p>
+
+            <router-link to="/register/biggy9ija" class="btn btn-success" style="font-family:arial">Register here</router-link>
         </div>
     </div>
   </div>
@@ -18,7 +20,21 @@ export default {
   name: 'Home',
   components: {
     Navbar
-  }
+  },
+  // methods:{
+  //   timej(){
+  //     let date = new Date()
+  //     let currentTime = date.getTime()
+  //     console.log("current", currentTime)
+  //     let ff = JSON.parse(localStorage.getItem('timeset'))
+  //     console.log(ff);   
+  //     if(ff > currentTime){
+  //       console.log("not expired")
+  //     }else{
+  //       console.log("expired")
+  //     }
+  //   }
+  // }
 }
 </script>
 <style lang="css" scoped>
@@ -66,7 +82,7 @@ export default {
     font-weight: 600;
     color: white;
   }
-  .biggy-title, .biggy-inner, .biggy-small-inner{
+  .biggy-title, .biggy-small-inner{
     font-size: 20px;
     text-align: center;
     font-weight: 500;

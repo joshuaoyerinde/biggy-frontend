@@ -59,11 +59,11 @@ export default {
     methods:{
         onSubmitLogin(){
             this.loading = true
-            let URL = "http://localhost:5000/api/auth/login"
+            let URL = "https://biggyapp.herokuapp.com/api/auth/login"
             let { email } = this
             let saveInfo = {email}
             axios.post(URL, saveInfo).then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if(res.status == 200){
                     Cookies.set('access_token', res.data.response);
                     setTimeout(() => {

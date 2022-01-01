@@ -1,19 +1,5 @@
 <template>
   <div class="container">
-      <!-- <div class="login row justify-content-center mx-auto mt-5">
-        <div class="col-md-6 shadow-sm p-2">
-            <form @submit.prevent="onRegister">
-              <div class="mt-2 mb-3">
-                Register here
-              </div>
-                <div class="form-group">
-                    <input type="" class="form-control mb-2" placeholder="name">
-                    <input type="" class="form-control" placeholder="phone number">
-                </div>
-                <button type="submit" class="btn btn-secondary shadow-sm">Register</button>
-            </form>
-        </div>
-      </div> -->
        <div class="row justify-content-center mt-3">
             <div class="col-xl-10 col-lg-12 col-md-9">
                 <div class="card o-hidden border-0 my-4 card-box">
@@ -91,7 +77,7 @@ export default {
        this.loading = true
       const link = Math.random().toString(36).replace('0.', '');
       const linkId = this.$route.params.id
-      console.log(linkId)
+      // console.log(linkId)
       let {name,lastname, phone, email} = this
       let registrationData = {name,lastname, phone, email}
       registrationData = {...registrationData, link}
@@ -100,7 +86,7 @@ export default {
         let msg = "Pls fill all the input required"
         this.message = msg
       }else{
-        const URL = `http://localhost:5000/api/auth/register/${linkId}`
+        const URL = `https://biggyapp.herokuapp.com/api/auth/register/${linkId}`
         Axios.post(URL, registrationData).then(res=>{
           if(res.status == 200){
             setTimeout(() => {
@@ -110,6 +96,7 @@ export default {
                 this.$router.push('/profile') 
             }, 2000);
           }else{
+            this.$router.push('/timeup')
             this.loading = true
           }
         })
