@@ -89,19 +89,23 @@ export default {
         const URL = `https://biggyapp.herokuapp.com/api/auth/register/${linkId}`
         Axios.post(URL, registrationData).then(res=>{
           if(res.status == 200){
-            setTimeout(() => {
-                this.loading = false
-                console.log(res.data.message)
-                Cookies.set('access_token', res.data.response);
-                this.$router.push('/profile') 
-            }, 2000);
-          }else{
-            this.$router.push('/timeup')
-            this.loading = true
+            // setTimeout(() => {
+               this.loading = false
+              console.log(res.data)
+              Cookies.set('access_token', res.data.response);
+              this.$router.push('/profile') 
+          
+            // }, 2000);
+          }
+        }).catch(err=>{
+          if(err.response.status == 409){
+            this.$router.push('/timeup');
+            console.log('no')
+          }
+          if(err.response.status == 400){
+              alert('input valid details')
           }
         })
-        // console.log(registrationData);
-
       }
      }
    }

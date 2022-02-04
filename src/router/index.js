@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Profile from '../views/Profile.vue'
 import Admin from '../components/Admin.vue'
+import Timeup from '../views/Endtime.vue'
 const routes = [
   {
     path: '/',
@@ -19,10 +20,7 @@ const routes = [
     component: () => import('../views/Login.vue')
   },
   {path:'/profile', name:'Profile', component:Profile},
-  {
-    path:'/timeup', 
-    component:() => import('../views/Endtime.vue')
-  },
+  { path:'/timeup', name:"Timeup", component:Timeup },
 
   // admin page 
   {path:'/admin', name:'Admin', component:Admin}

@@ -27,6 +27,7 @@
                 <div class="col-md-4">
                     <img src="../assets/coke-bigi-new.png" class="img-fluid" alt="">
                 </div>
+                <!-- <button @click="timeUp">Time</button> -->
                 <div class="col-md-8">
                     <div class="title-list">
                         List of the Top ten(10) winner
@@ -89,7 +90,8 @@ export default {
     //         let currentDateObj = new Date();
 
     //         let minute = currentDateObj.getTime();
-    //         let adminute = minute + 60 * 6000
+    //         let adminute = 1641474341197 - minute
+    //         console.log(adminute)
     //         localStorage.setItem('timeset', JSON.stringify( adminute))
     //     }
     // }

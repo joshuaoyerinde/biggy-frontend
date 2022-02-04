@@ -64,6 +64,7 @@ export default {
     data:()=>({
         response:'',
         url:"https://biggytest.netlify.app/#/register/",
+        // url:"http://localhost:8081/#/register/",
         details:''
     }),
     // components:{
